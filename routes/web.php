@@ -17,21 +17,35 @@ Route::get('/', function () {
 
 Auth::routes();
 
+/*home page of user*/
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*logout*/
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
+/*dashboard of admin*/
+
 Route::get('/dashboard', 'HomeController@AdminIndex')->name('Dashboard');
+
+/*Show the list of all users*/
 
 Route::get('/addAwards','usersController@showUsers');
 
+/*Show the add awards page*/
+
 Route::get('/addAwards/{id}','awardsController@addAwards');
+
+/*add the new awards to database*/
 
 Route::post('/addNewAwards/{id}','awardsController@addNewawards');
 
 /*delete the unwanted awards*/
 
 Route::get('/deleteAward/{id}','awardsController@deleteAward');
+
+/*show the update page with existing details*/
 
 Route::get('/updateAwardsInfo/{id}','awardsController@updateAwardsInfo');
 
