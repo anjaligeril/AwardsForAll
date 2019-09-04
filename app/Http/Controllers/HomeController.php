@@ -23,6 +23,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    /*home of user*/
     public function index()
     {
         $role = Auth::user()->role;
@@ -43,6 +45,8 @@ class HomeController extends Controller
         }
         return view('home');
     }
+
+    /*admin home*/
     public function AdminIndex()
     {
         $awards=Award::all();
